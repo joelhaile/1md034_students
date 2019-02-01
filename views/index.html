@@ -2,107 +2,132 @@
 <html lang="en">
 <section>
     <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>Mummel</title>
         <!-- Visas överst på fönstret -->
         <meta charset="utf-8"/>
+
     </head>
 </section>
+
 
 <section>
     <body>
         <main>
-            <h1>Välkommen till BurgerOnline</h1>
+            <section class="top">
 
+            <h1 class="headline" align="center">WELCOME TO BURGER PLACE!</h1>
+            <img src="css/SMILE.jpg" class="header">
+            <img src="https://media.giphy.com/media/vzF0lrwPoR9kc/giphy.gif" class="fireworks">
+            <img src="https://media.giphy.com/media/vzF0lrwPoR9kc/giphy.gif" class="fireworks" align="right">
+                <img src="https://media.giphy.com/media/MxYQrB9jeGzza/giphy.gif" class="banana">
 
+            </section>
 
-            <h2>SELECT BURGER!</h2>
-            <div>THIS IS WHERE U EXECUTE BURGER SELECTION!</div>
+            <h2 align="center">SELECT BURGER!</h2>
+            <div align="center">LOOK AT OUR TASTY AND AMAZING BURGERS!</div>
             <br />
             <br />
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Burger Tower</th>
-                        <th>Sneaker head</th>
-                        <th>Veggolicious</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="https://tinyurl.com/yazksfeo" alt="BURGER TOWER!" title="EXTRA JUICY!" width="200"></td>
-                        <td><img src="https://tinyurl.com/yc5nlnsh" alt="Stylish" title="Beautiful!" width="200"></td>
-                        <td><img src="https://tinyurl.com/ycjyazqb" alt="NO meat" title="Healthy!" width="200"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul>
-                                <li>Very much big</li>
-                                <li>Lactose bomb</li>
-                                <li>Gluten free</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>Wearable and eatable</li>
-                                <li>Swag level over 9000!</li>
-                                <li>Lactose free</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>No animal products</li>
-                                <li>Attracts hipsters</li>
-                                <li>Spicy very hot</li>
-                            </ul>
-                        </td>
-                    </tr>
-            </table>
+            <div class="wrapper">
+                <div class="box a">
+                    <p>Basic Burger</p>
+
+                    <td align="center"><img src="https://tinyurl.com/y7ddyd4e" alt="Basic Burger" title="EXTRA JUICY!"
+                                            width="200"></td>
+
+                    <ul>
+                        <li>For all the Basic People</li>
+                        <li>Lactose bomb</li>
+                        <li class="allergies">Gluten free</li>
+                    </ul>
+                </div>
+
+                <div class="box b">
+                    <p>Cute Little Burger</p>
+                    <img src="https://tinyurl.com/yced822e" alt="Cute" title="Beautiful!" width="200">
+
+                    <ul>
+                        <li>Low Calories</li>
+                        <li>Too Cute to eat</li>
+                        <li class="allergies">Lactose free</li>
+                    </ul>
+                </div>
+
+                <div class="box c">
+                    <p>Veggolicious</p>
+                    <img src="https://tinyurl.com/y9j8e8gn" alt="NO meat" title="Healthy!" width="200">
+
+                    <ul>
+                        <li>No animal products</li>
+                        <li>Attracts hipsters</li>
+                        <li>Spicy very hot</li>
+                    </ul>
+                </div>
+            </div>
 
 
-            <h2>CUSTOMER INFORMATION!</h2>
-            <div>NICE INFORMATION!</div>
+            <h2 align="center">CUSTOMER INFORMATION!</h2>
+            <div align="center">NICE INFORMATION!</div>
+
+            <div class="infogrid">
+                <div class="container info">
+
+                    <h2>Delivery Information</h2>
+                    <p>
+                        <label for="fullname">First</label><br>
+                        <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name">
+                    </p>
+                    <p>
+                        <label for="email">E-mail</label><br>
+                        <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+                    </p>
+                    <p>
+                        <label for="street">Street</label><br>
+                        <input type="text" id="street" name="ln" placeholder="Street name">
+                    </p>
+                    <p>
+                        <label for="house">House</label><br>
+                        <input type="text" id="house" name="ln" placeholder="House name">
+                    </p>
+
+                    <p>
+                        <label for="payment">Payment Method</label><br>
+                        <select id="payment" name="pay">
+                            <option>Sms-loan</option>
+                            <option>Installment</option>
+                            <option>Parents Credit card</option>
+                            <option>Debit card</option>
+                        </select>
+                    </p>
+
+                    <h4>Gender</h4>
+                    <input type="radio" checked="checked" id="undisclosed" name="ln" placeholder="other">
+                    <label for="undisclosed" >Undisclosed</label><br>
+                    <input type="radio"  id="male" name="ln" placeholder="House name">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="ln" placeholder="House name">
+                    <label for="female">Female</label><br>
+                    <input type="radio" id="non" name="ln" placeholder="House name">
+                    <label for="non">Non-Binary</label><br>
+
+                </div>
+
+                <div class="container pika">
+                    <img src="https://www.freeiconspng.com/uploads/pikachu-transparent-10.gif">
+                </div>
+
+                <div class="container send">
+                    <button type="submit"><img src="https://media.giphy.com/media/l0IpXgEBZ3y3UEljO/giphy.gif"
+                                               alt="jallarå" width="200" height="150"> Send Info</button>
+                    <img src="https://media1.giphy.com/media/C0Rvn1BlqQQgM/giphy.gif?cid=3640f6095c5466a34a37533477b44d97"
+                    height="350" width="450">
+
+                </div>
+            </div>
 
 
-            <h2>Delivery Information</h2>
-            <p>
-                <label for="fullname">First</label><br>
-                <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name">
-            </p>
-            <p>
-                <label for="email">E-mail</label><br>
-                <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
-            </p>
-            <p>
-                <label for="street">Street</label><br>
-                <input type="text" id="street" name="ln" placeholder="Street name">
-            </p>
-            <p>
-                <label for="house">House</label><br>
-                <input type="text" id="house" name="ln" placeholder="House name">
-            </p>
 
-            <p>
-                <label for="payment">Payment Method</label><br>
-                <select id="payment" name="pay">
-                    <option>Sms-loan</option>
-                    <option>Istallment</option>
-                    <option>Parents Credit card</option>
-                    <option>Debit card</option>
-                </select>
-            </p>
-
-            <h4>Gender</h4>
-                <input type="radio" checked="checked" id="undisclosed" name="ln" placeholder="other">
-                <label for="undisclosed" >Undisclosed</label><br>
-                <input type="radio"  id="male" name="ln" placeholder="House name">
-                <label for="male">Male</label><br>
-                <input type="radio" id="female" name="ln" placeholder="House name">
-                <label for="female">Female</label><br>
-                <input type="radio" id="non" name="ln" placeholder="House name">
-                <label for="non">Non-Binary</label><br>
-
-            <button type="submit"><img src="https://tinyurl.com/y79p66eu" alt="jallarå"> Send Info</button>
 
         </main>
 

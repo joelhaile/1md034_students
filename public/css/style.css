@@ -1,0 +1,110 @@
+
+body {
+    font-family: "Comic Sans MS";
+    font-size: 20px;
+    color: rgb(255, 0, 255);
+    background-image: linear-gradient(red, rgb(255, 153, 0), yellow, green, blue, rgb(75,0,130), rgb(148,0,211));
+}
+
+.allergies{
+    font-weight: bold;
+    color: #ff5500;
+}
+
+
+.header{
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: auto;
+    border: 15px solid rgb(0, 255, 204);
+}
+
+.top{
+    overflow: hidden;
+    opacity: 0.99;
+}
+
+.fireworks{
+}
+
+.banana{
+    margin-left: 125px;
+}
+.headline{
+    position: absolute;
+    font-size: 35px;
+    margin-left: 30%;
+    margin-top: 10%;
+    color: rgb(204, 0, 204);
+}
+
+
+button:hover {
+    background-color: green;
+}
+
+button {
+    opacity: 0.75;
+    font-size: 40px
+}
+.wrapper {
+    display: grid;
+    grid-auto-columns: 3fr;
+    color: #444;
+
+}
+
+.box {
+    color: #fff;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 150%;
+    border: 5px solid #bbb;
+    text-align: center;
+}
+
+.a {
+    grid-column: 1 / span 1;
+}
+
+
+.b {
+    grid-column: 2/ span 1;
+}
+                                                                       
+.c {
+    grid-column: 3 / span 1;
+}
+
+
+.infogrid {
+    display: grid;
+    grid-auto-columns: 3fr;
+    color: #444;
+
+}
+
+.container {
+    color: #fff;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 150%;
+    border: 5px solid #bbb;
+    text-align: center;
+}
+
+.info {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.pika {    
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.send {
+    grid-column: 2;
+    grid-row: 2;
+}
