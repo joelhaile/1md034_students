@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <section>
     <head>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <title>Mummel</title>
-        <!-- Visas överst på fönstret -->
+        <script type="text/javascript" src="js/menu.js"></script>
+        <!--<script src="js/js_script.js" defer></script>-->
+       <script src="https://vuejs.org/js/vue.js" defer></script>
+       <script src="js/vue_script.js" defer></script>
+        <link rel="stylesheet" href="css/deli-very.css">
+        <script src="/socket.io/socket.io.js" defer></script>
+        <script src="js/deli-very.js" defer></script>
+
+       <title>Mummel</title>
+       <!-- Visas överst på fönstret -->
         <meta charset="utf-8"/>
 
     </head>
 </section>
 
 
-<section>
+<section id="app">
     <body>
         <main>
             <section class="top">
@@ -29,41 +37,18 @@
             <br />
             <br />
 
-            <div class="wrapper">
-                <div class="box a">
-                    <p>Basic Burger</p>
+            <div class="wrapper" id="menu">
 
-                    <td align="center"><img src="https://tinyurl.com/y7ddyd4e" alt="Basic Burger" title="EXTRA JUICY!"
-                                            width="200"></td>
+                <div class="box" v-for="burgers in menu">
+                    <p>{{burgers.burger}}</p>
+                    <img v-bind:src="burgers.img" width="200px" height="200px">
+                    <li>{{burgers.kCal}}</li>
+                    <li v-if="burgers.gluten == false">gluten free</li>
+                    <li v-if="burgers.lactose == false">lactose free</li>
+                    <input type="checkbox" id="checkbox" v-model="burgers.checked">
 
-                    <ul>
-                        <li>For all the Basic People</li>
-                        <li>Lactose bomb</li>
-                        <li class="allergies">Gluten free</li>
-                    </ul>
                 </div>
 
-                <div class="box b">
-                    <p>Cute Little Burger</p>
-                    <img src="https://tinyurl.com/yced822e" alt="Cute" title="Beautiful!" width="200">
-
-                    <ul>
-                        <li>Low Calories</li>
-                        <li>Too Cute to eat</li>
-                        <li class="allergies">Lactose free</li>
-                    </ul>
-                </div>
-
-                <div class="box c">
-                    <p>Veggolicious</p>
-                    <img src="https://tinyurl.com/y9j8e8gn" alt="NO meat" title="Healthy!" width="200">
-
-                    <ul>
-                        <li>No animal products</li>
-                        <li>Attracts hipsters</li>
-                        <li>Spicy very hot</li>
-                    </ul>
-                </div>
             </div>
 
 
@@ -71,69 +56,94 @@
             <div align="center">NICE INFORMATION!</div>
 
             <div class="infogrid">
-                <div class="container info">
+                <div class="container info" id="customer">
 
                     <h2>Delivery Information</h2>
                     <p>
-                        <label for="fullname">First</label><br>
-                        <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name">
+                        <label for="fullname">Full name</label><br>
+                        <input v-model="person" type="text" id="fullname" name="fn" required="required"
+                               placeholder="First- and Last name">
                     </p>
                     <p>
                         <label for="email">E-mail</label><br>
-                        <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+                        <input v-model="mail" type="email" id="email" name="em" required="required"
+                               placeholder="E-mail address">
                     </p>
+                    <!--
                     <p>
                         <label for="street">Street</label><br>
-                        <input type="text" id="street" name="ln" placeholder="Street name">
+                        <input v-model="adress" type="text" id="street" name="ln" placeholder="Street name">
                     </p>
                     <p>
                         <label for="house">House</label><br>
-                        <input type="text" id="house" name="ln" placeholder="House name">
+                        <input v-model="building" type="text" id="house" name="ln" placeholder="House name">
                     </p>
-
+                    -->
                     <p>
                         <label for="payment">Payment Method</label><br>
-                        <select id="payment" name="pay">
+                        <select id="payment" name="pay" v-model="payment">
                             <option>Sms-loan</option>
                             <option>Installment</option>
                             <option>Parents Credit card</option>
                             <option>Debit card</option>
                         </select>
+
                     </p>
 
                     <h4>Gender</h4>
-                    <input type="radio" checked="checked" id="undisclosed" name="ln" placeholder="other">
+                    <input type="radio" checked="checked" id="undisclosed" v-model="gender" value="undisclosed">
                     <label for="undisclosed" >Undisclosed</label><br>
-                    <input type="radio"  id="male" name="ln" placeholder="House name">
+                    <input type="radio"  id="male" v-model="gender" value="male" >
                     <label for="male">Male</label><br>
-                    <input type="radio" id="female" name="ln" placeholder="House name">
+                    <input type="radio" id="female" v-model="gender" value="female">
                     <label for="female">Female</label><br>
-                    <input type="radio" id="non" name="ln" placeholder="House name">
+                    <input type="radio" id="non" v-model="gender" value="non-binary">
                     <label for="non">Non-Binary</label><br>
+
 
                 </div>
 
                 <div class="container pika">
                     <img src="https://www.freeiconspng.com/uploads/pikachu-transparent-10.gif">
                 </div>
-
-                <div class="container send">
-                    <button type="submit"><img src="https://media.giphy.com/media/l0IpXgEBZ3y3UEljO/giphy.gif"
+                <div class="container send" id="orders">
+                    <button type="submit" v-on:click="makeOrder"><img src="https://media.giphy.com/media/l0IpXgEBZ3y3UEljO/giphy.gif"
                                                alt="jallarå" width="200" height="150"> Send Info</button>
                     <img src="https://media1.giphy.com/media/C0Rvn1BlqQQgM/giphy.gif?cid=3640f6095c5466a34a37533477b44d97"
                     height="350" width="450">
-
                 </div>
             </div>
 
+        <div class="orderinfo" v-if="orderHasBeenMade">
+            <span>{{person}}</span>
+            <span>{{mail}}</span>
+            <!--<span>{{adress}}</span>
+            <span>{{building}}</span>-->
+            <span>{{payment}}</span>
+            <span>{{gender}}</span>
+            <span v-for="benim in chosenBurgers">
+                {{benim.burger}}
+            </span>
+        </div>
 
-
+            <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+            <div class="view-box">
+                <div id="dots" v-on:click="addOrder">
+                    <div
+                            v-for="(order, key) in orders"
+                            v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                        {{key}}
+                    </div>
+                </div>
+            </div>
 
         </main>
 
         <footer>
             <p> &copy; BENIM COPYRIGHT </p>
         </footer>
+
+
 
     </body>
 </section>

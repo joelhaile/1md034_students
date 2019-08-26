@@ -49,8 +49,8 @@ button {
     font-size: 40px
 }
 .wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
     display: grid;
-    grid-auto-columns: 3fr;
     color: #444;
 
 }
