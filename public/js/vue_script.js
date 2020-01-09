@@ -17,6 +17,7 @@ var vm = new Vue({
             this.orderHasBeenMade = true;
 
         }
+
     },
 
     computed: {
