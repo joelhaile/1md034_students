@@ -14,8 +14,6 @@ var food = [
         "gluten": false,
         "img": "https://tinyurl.com/yced822e",
         "checked": false
-
-
     },
     {
         "burger": "Veggolicious",

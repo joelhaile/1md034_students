@@ -6,12 +6,12 @@
         <script type="text/javascript" src="js/menu.js"></script>
         <!--<script src="js/js_script.js" defer></script>-->
        <script src="https://vuejs.org/js/vue.js" defer></script>
-       <script src="js/vue_script.js" defer></script>
+        <script src="/socket.io/socket.io.js" defer></script>
+        <script src="js/vue_script.js" defer></script>
 
 
         <link rel="stylesheet" href="css/deli-very.css">
-        <script src="/socket.io/socket.io.js" defer></script>
-        <script src="js/deli-very.js" defer></script>
+       <!-- <script src="js/deli-very.js" defer></script>-->
 
        <title>Mummel</title>
        <!-- Visas överst på fönstret -->
@@ -109,41 +109,40 @@
                 <div class="container pika">
                     <img src="https://www.freeiconspng.com/uploads/pikachu-transparent-10.gif">
                 </div>
-                <div class="container send" id="orders">
-                    <button type="submit" ><img src="https://media.giphy.com/media/l0IpXgEBZ3y3UEljO/giphy.gif"
+                <!--<div class="container send" id="orders">
+                    <button type="submit" v-on:click="makeOrder"><img src="https://media.giphy.com/media/l0IpXgEBZ3y3UEljO/giphy.gif"
                                                alt="jallarå" width="200" height="150"> Send Info</button>
                     <img src="https://media1.giphy.com/media/C0Rvn1BlqQQgM/giphy.gif?cid=3640f6095c5466a34a37533477b44d97"
                     height="350" width="450">
                 </div>
-            </div>
-
-        <div class="orderinfo" v-if="orderHasBeenMade">
-            <span>{{person}}</span>
-            <span>{{mail}}</span>
-            <!--<span>{{adress}}</span>
-            <span>{{building}}</span>-->
-            <span>{{payment}}</span>
-            <span>{{gender}}</span>
-            <span v-for="benim in chosenBurgers">
-                {{benim.burger}}
-            </span>
-        </div>
-            </div>
-            <div id="comma">
-                <button type="submit" v-on:click="addOrder">fittballe
-                </button>
-
-            <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
-            <div class="view-box">
-                <div id="dots" v-on:click="displayOrder">
-                    <div
-                            v-for="(order, key) in orders"
-                            v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-                        {{order}}
+                </-->
+                <div class="view-box">
+                    <div id="dots" v-on:click="displayOrder">
+                        <div v-bind:style="{ left: details.x + 'px' , top: details.y + 'px'}">
+                            {{target}}
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
+
+       <!-- <div class="orderinfo" v-if="orderHasBeenMade">
+            <span>{{person}}</span>
+            <span>{{mail}}</span>
+            <span>{{adress}}</span>
+            <span>{{building}}</span>
+            <span>{{payment}}</span>
+            <span>{{gender}}</span>
+            <span v-for="item in chosenBurgers">
+                {{item.burger}}
+            </span>
+        -->
+                <div align="center">
+                    <button type="submit"  v-on:click="addOrder">Send Order
+                    </button>
+                </div>
+        </div>
+
+
 
         </main>
 

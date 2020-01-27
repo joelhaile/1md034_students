@@ -21,7 +21,7 @@ var vm = new Vue({
         console.log("bananskal");
         var offset = {x: event.currentTarget.getBoundingClientRect().left,
                     y: event.currentTarget.getBoundingClientRect().top};
-      socket.emit("addOrder", { orderId: this.getNext(),
+        socket.emit("addOrder", { orderId: this.getNext(),
                                 details: { x: event.clientX - 10 - offset.x,
                                            y: event.clientY - 10 - offset.y},
                                 orderItems: ["Beans", "Curry"]
@@ -33,7 +33,7 @@ var vm = new Vue({
       var offset = {x: event.currentTarget.getBoundingClientRect().left,
                     y: event.currentTarget.getBoundingClientRect().top};
       return{
-      socket.emit("addOrder", { target: "T",
+      socket:emit("addOrder", { target: "T",
                                 details: { x: event.clientX - 10 - offset.x,
                                            y: event.clientY - 10 - offset.y }
 
